@@ -26,7 +26,7 @@ int main(void) {
     DAC_Init();
 		
 
-		dac_calibrated_value = Storage_LoadDAC();
+//	  dac_calibrated_value = Storage_LoadDAC();
 
     while (1) {
         if (presses != lastPresses) {
@@ -50,6 +50,8 @@ int main(void) {
         Timeout_Reset();
         Measurement_Calibration();
 				}
+
+				
 
 
         if (Timeout_IsExpired()) {

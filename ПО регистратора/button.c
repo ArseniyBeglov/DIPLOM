@@ -2,6 +2,8 @@
 
 volatile uint8_t presses = 0;
 volatile bool doFlag = false;
+extern volatile bool useRussian;
+
 
 static volatile uint8_t button_pending = 0; 
 
@@ -51,18 +53,27 @@ void EXTI0_1_IRQHandler(void) {
     }
 }
 
+extern volatile bool useRussian;
+
 void TIM14_IRQHandler(void) {
     if (TIM14->SR & TIM_SR_UIF) {
         TIM14->SR &= ~TIM_SR_UIF;
         TIM14->CR1 &= ~TIM_CR1_CEN;
 
-        if ((GPIOC->IDR & (1 << 0)) == 0 && button_pending == 1) {
-            presses++;
-            if (presses > 2) presses = 0;
-        }
+        uint8_t pc0 = (GPIOC->IDR & (1 << 0)) == 0;
+        uint8_t pc1 = (GPIOC->IDR & (1 << 1)) == 0;
 
-        if ((GPIOC->IDR & (1 << 1)) == 0 && button_pending == 2) {
-            doFlag = true;
+        if (pc0 && pc1) {
+            useRussian = !useRussian;
+						presses = 0;
+        } else {
+            if (pc0 && button_pending == 1) {
+                presses++;
+                if (presses > 2) presses = 0;
+            }
+            if (pc1 && button_pending == 2) {
+                doFlag = true;
+            }
         }
 
         EXTI->IMR |= EXTI_IMR_MR0 | EXTI_IMR_MR1;

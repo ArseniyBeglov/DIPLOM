@@ -1,7 +1,68 @@
 #include "graphic.h"
+#include <stdbool.h>
+#include "adc.h"
+#include <math.h>
+
 extern void GLCD_SetPixel(unsigned char x, unsigned char y, unsigned char color);
 
 const unsigned char color = 1;
+volatile bool useRussian = true;
+extern const unsigned short Untitled13x8[6][16];
+
+
+
+#include "KS0108.h"
+
+void DrawBatteryIcon(uint8_t level) {
+    if (level > 5) level = 5;
+
+    const uint8_t x0 = 114;  // правый край экрана
+    const uint8_t y0 = 0;    // верхняя строка
+
+    // Контур батареи (13x8)
+    for (uint8_t x = 0; x < 12; x++) {
+        GLCD_SetPixel(x0 + x, y0, 1);       // верхняя рамка
+        GLCD_SetPixel(x0 + x, y0 + 7, 1);   // нижняя рамка
+    }
+    for (uint8_t y = 0; y < 8; y++) {
+        GLCD_SetPixel(x0,     y0 + y, 1);   // левая рамка
+        GLCD_SetPixel(x0 + 11, y0 + y, 1);  // правая рамка
+    }
+
+    // Контакт (наружу справа)
+    GLCD_SetPixel(x0 + 12, y0 + 2, 1);
+    GLCD_SetPixel(x0 + 12, y0 + 3, 1);
+    GLCD_SetPixel(x0 + 12, y0 + 4, 1);
+    GLCD_SetPixel(x0 + 12, y0 + 5, 1);
+
+    // ? Очищаем внутреннюю область (всё внутри рамки)
+    for (uint8_t x = 1; x < 11; x++) {
+        for (uint8_t y = 1; y < 7; y++) {
+            GLCD_SetPixel(x0 + x, y0 + y, 0);
+        }
+    }
+
+    // ? Заполнение уровня заряда (до 5 блоков)
+    for (uint8_t i = 0; i < level; i++) {
+        uint8_t fillX = x0 + 1 + i * 2;
+        for (uint8_t y = 1; y <= 6; y++) {
+            GLCD_SetPixel(fillX,     y0 + y, 1);
+            GLCD_SetPixel(fillX + 1, y0 + y, 1);
+        }
+    }
+}
+
+
+
+uint8_t GetBatteryLevelFromVoltage(float voltage) {
+    if (voltage >= 2.59f) return 5;
+    else if (voltage >= 2.534f) return 4;
+    else if (voltage >= 2.492f) return 3;
+    else if (voltage >= 2.45f) return 2;
+    else if (voltage >= 2.17f) return 1;
+    else return 0;
+}
+
 
 void GLCD_Rectangle(unsigned char x, unsigned char y, unsigned char b, unsigned char a)
 {
@@ -118,29 +179,38 @@ if ((Dx != 0) || (Dy != 0))
 void DrawModeScreen(uint8_t mode) {
     GLCD_ClearScreen();
 
-    const char* modeNames[] = {
+    const char* modeNamesRus[] = {
+        "режим: постоянный",
+        "режим: одиночный",
+        "режим: калибровка"
+    };
+
+    const char* modeNamesEng[] = {
         "mode: continuous",
         "mode: single",
         "mode: calibration"
     };
 
-    const uint8_t y_coords[] = {1, 2, 3}; // СЃС‚СЂРѕРєРё (1 СЃС‚СЂРѕРєР° = 8 РїРёРєСЃРµР»РµР№)
+    const char** modeNames = useRussian ? modeNamesRus : modeNamesEng;
+
+    const uint8_t y_coords[] = {1, 2, 3};
 
     for (uint8_t i = 0; i < 3; i++) {
         uint8_t y = y_coords[i];
 
         if (i == mode) {
             uint8_t base_x = 5;
-            uint8_t base_y = y * 8 + 3;  
+            uint8_t base_y = y * 8 + 3;
 
-            GLCD_Line(base_x, base_y, base_x + 2, base_y + 3);        
-            GLCD_Line(base_x + 2, base_y + 3, base_x + 6, base_y - 3); 
+            GLCD_Line(base_x, base_y, base_x + 2, base_y + 3);
+            GLCD_Line(base_x + 2, base_y + 3, base_x + 6, base_y - 3);
         }
 
         GLCD_GoTo(16, y);
         GLCD_WriteString(modeNames[i]);
     }
 }
+
 
 void GLCD_ShutDown_Device(void) {
     GLCD_ClearScreen();

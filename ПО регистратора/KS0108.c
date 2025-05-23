@@ -62,25 +62,33 @@ for(j = 0; j < KS0108_SCREEN_HEIGHT/8; j++)
 	}
 }
 
-void GLCD_WriteChar(char charToWrite)
+extern const unsigned short LCD5x8H5x8[]; // массив кириллицы
+
+void GLCD_WriteChar(char ch)
 {
     uint8_t i;
-    uint16_t index;
 
-    if ((uint8_t)charToWrite >= 32 && (uint8_t)charToWrite < 128) {
-        index = ((uint8_t)charToWrite - 32) * 5;
-    } else if ((uint8_t)charToWrite >= 0x80 && (uint8_t)charToWrite <= 0xBF) {
-        index = (96 + ((uint8_t)charToWrite - 0x80)) * 5;
+    if ((uint8_t)ch >= 0xC0 && (uint8_t)ch <= 0xFF) {
+        uint8_t index = (uint8_t)ch - 0xC0; 
+        const unsigned short* glyph = &LCD5x8H5x8[index * 6 + 1]; 
+
+        for (i = 0; i < 5; i++) {
+            GLCD_WriteData((uint8_t)glyph[i]);
+        }
+    }
+    else if ((uint8_t)ch >= 32 && (uint8_t)ch < 128) {
+        extern const char font5x8[];
+        const char* glyph = &font5x8[((uint8_t)ch - 32) * 5];
+        for (i = 0; i < 5; i++) {
+            GLCD_WriteData(glyph[i]);
+        }
     } else {
-        for (i = 0; i < 5; i++) GLCD_WriteData(0x00);
-        GLCD_WriteData(0x00);
-        return;
+        for (i = 0; i < 5; i++) {
+            GLCD_WriteData(0x00);
+        }
     }
 
-    for(i = 0; i < 5; i++) {
-        GLCD_WriteData(font5x8[index + i]);
-    }
-    GLCD_WriteData(0x00); // пробел между символами
+    GLCD_WriteData(0x00); // интервал
 }
 
 

@@ -7,6 +7,8 @@
 #include "delay.h"
 #include <stdio.h>
 #include "storage.h"
+#include <stdbool.h>
+extern volatile bool useRussian;
 
 #define V_REF 3.0f
 extern uint16_t dac_calibrated_value;
@@ -62,16 +64,30 @@ static void Measurement_PerformCycle(void) {
     float angle = compute_angle(voltage_pa0, voltage_pa1);
 
 
-    sprintf(buffer, "Angle: %.2f deg", angle);
+    if (useRussian) {
+		sprintf(buffer, "Угол: %.2f +- 0.04", angle);
+	} else {
+		sprintf(buffer, "Angle: %.2f +- 0.04" , angle);
+	}
+
+
 
 
     UART1_SendString(buffer);
     UART1_SendString("\r\n");
 
     GLCD_GoTo(0, 6);
-    GLCD_WriteString("                "); 
+    GLCD_WriteString("                              "); 
     GLCD_GoTo(0, 6);
     GLCD_WriteString(buffer);
+
+		DAC->CR |= DAC_CR_EN1;
+		DAC->DHR12R1 = 3403;
+		uint16_t adc_battery = ADC_Read_Channel(2);
+		float voltage = (adc_battery / 4095.0f) * 3.0f;
+		uint8_t level = GetBatteryLevelFromVoltage(voltage);
+		DrawBatteryIcon(level);
+		DAC->CR &= ~DAC_CR_EN1;
 }
 
 
@@ -87,7 +103,7 @@ static bool calibration_aborted(uint8_t expectedPresses) {
     if (presses != expectedPresses) {
        
         DAC->CR &= ~DAC_CR_EN1;
-        DAC->DHR12R1 = 0;
+        DAC->DHR12R1 = 4095;
         return true;
     }
     return false;
@@ -106,8 +122,11 @@ void Measurement_Calibration(void) {
     DAC->DHR12R1 = dacValue;
 
     GLCD_GoTo(0, 6);
-    GLCD_WriteString("Calibration started");
-    UART1_SendString("Calibration started\r\n");
+		GLCD_GoTo(0, 6);
+		GLCD_WriteString(useRussian ? "Калибровка запущена" : "Calibration started");
+		UART1_SendString(useRussian ? "Калибровка запущена\r\n" : "Calibration started\r\n");
+
+
 
     Delay_ms(1000);
 
@@ -124,11 +143,12 @@ void Measurement_Calibration(void) {
         if (ratio >= 0.95f && ratio <= 1.05f) break;
 
         GLCD_GoTo(0, 6);
-        if (ratio > 1.05f) {
-            GLCD_WriteString("Tilt: Clockwise     ");
-        } else {
-            GLCD_WriteString("Tilt: Anti-Clock    ");			
-        }
+		if (ratio > 1.05f) {
+			GLCD_WriteString(useRussian ? "Наклон вправо     " : "Tilt: Clockwise     ");
+		} else {
+			GLCD_WriteString(useRussian ? "Наклон влево      " : "Tilt: Anti-Clock    ");
+		}
+
 
         Delay_ms(200);
     }
@@ -151,11 +171,17 @@ void Measurement_Calibration(void) {
 			uint16_t threshold0 = maxValue0 * 5 / 100;
 			uint16_t threshold1 = maxValue1 * 5 / 100;
 
+			if (!passedPeak) {
+			GLCD_GoTo(0, 6);
+			GLCD_WriteString(useRussian ? "Опустите волокна   " : "Go lower           ");
+
+			}
+
 			if (!passedPeak && (diff0 > threshold0 || diff1 > threshold1)) {
 					passedPeak = true;
-
 					GLCD_GoTo(0, 6);
-					GLCD_WriteString("Go higher        ");
+					GLCD_WriteString(useRussian ? "Поднимите волокна  " : "Go higher          ");
+
 			}
 
 			if (passedPeak) {
@@ -164,8 +190,8 @@ void Measurement_Calibration(void) {
 
 					if (inRange0 && inRange1) {
 							GLCD_GoTo(0, 6);
-							GLCD_WriteString("Max found         ");
-							UART1_SendString("Max found\r\n");
+							GLCD_WriteString(useRussian ? "Максимум найден    " : "Max found          ");
+							UART1_SendString(useRussian ? "Максимум найден\r\n" : "Max found\r\n");
 							break;
 					}
 			}
@@ -173,10 +199,11 @@ void Measurement_Calibration(void) {
 			Delay_ms(200);
 		}		
 
-    // Р¤Р°Р·Р° 3: РќР°СЃС‚СЂРѕР№РєР° DAC С‚Р°Рє, С‡С‚РѕР±С‹ PA0 РїРѕРїР°Р» РІ РґРёР°РїР°Р·РѕРЅ 2.4вЂ“2.6 Р’
+    
 		GLCD_GoTo(0, 6);
 		GLCD_WriteString("                    ");
-		GLCD_WriteString("In progress         ");
+		GLCD_WriteString(useRussian ? "Настройка DAC..." : "In progress...");
+
 		bool success = false;
     while (1) {
 				if (calibration_aborted(2)) return;
@@ -188,17 +215,18 @@ void Measurement_Calibration(void) {
 				DAC->DHR12R1 = 4095;
 				if (voltage >= 2.4f && voltage <= 2.6f) {
 						GLCD_GoTo(0, 6);
-						GLCD_WriteString("Calibration done  ");
-						UART1_SendString("Calibration ended\r\n");
+						GLCD_WriteString(useRussian ? "Калибровка завершена" : "Calibration done");
+						UART1_SendString(useRussian ? "Калибровка завершена\r\n" : "Calibration ended\r\n");
+
 						success = true;
 						break;
 				}
 
 				if (voltage > 2.6f) {
-						if (dacValue == 0) break; // РЅРµ РјРѕР¶РµРј СѓРјРµРЅСЊС€Р°С‚СЊ РґР°Р»СЊС€Рµ
+						if (dacValue == 0) break; 
 						dacValue++;
 				} else { // voltage < 2.4f
-						if (dacValue >= 4095) break; // РЅРµ РјРѕР¶РµРј СѓРІРµР»РёС‡РёРІР°С‚СЊ РґР°Р»СЊС€Рµ
+						if (dacValue >= 4095) break; 
 						dacValue--;
 				}
 				
@@ -212,8 +240,9 @@ void Measurement_Calibration(void) {
 
 		if (!success) {
 				GLCD_GoTo(0, 6);
-				GLCD_WriteString("Calibration fail");
-				UART1_SendString("Calibration failed\r\n");
+				GLCD_WriteString(useRussian ? "Ошибка калибровки" : "Calibration fail");
+				UART1_SendString(useRussian ? "Ошибка калибровки\r\n" : "Calibration failed\r\n");
+
 		}
 
     DAC->CR &= ~DAC_CR_EN1;

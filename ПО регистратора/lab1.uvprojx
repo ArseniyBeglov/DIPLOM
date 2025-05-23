@@ -520,6 +520,16 @@
               <FileType>1</FileType>
               <FilePath>.\storage.c</FilePath>
             </File>
+            <File>
+              <FileName>font_rus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\font_rus.c</FilePath>
+            </File>
+            <File>
+              <FileName>battary.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\battary.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

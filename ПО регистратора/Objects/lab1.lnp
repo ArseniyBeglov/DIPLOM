@@ -13,6 +13,8 @@
 ".\objects\timeout.o"
 ".\objects\measurement.o"
 ".\objects\storage.o"
+".\objects\font_rus.o"
+".\objects\battary.o"
 ".\objects\os_systick.o"
 ".\objects\stm32f0xx_hal.o"
 ".\objects\stm32f0xx_hal_adc.o"

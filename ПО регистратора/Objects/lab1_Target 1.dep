@@ -1,6 +1,6 @@
 Dependencies for Project 'lab1', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\main.c)(0x68228581)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/main.o -MD)
+F (.\main.c)(0x68310556)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/main.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f051x8.h)(0x61A87598)
@@ -51,7 +51,7 @@ I (uart.h)(0x681E97C0)
 I (adc.h)(0x6810C351)
 I (dac.h)(0x6810058A)
 I (pwm.h)(0x6810058A)
-I (graphic.h)(0x681E6A56)
+I (graphic.h)(0x6830FED3)
 I (KS0108.h)(0x681E2E48)
 I (button.h)(0x681E42D2)
 I (measurement.h)(0x681EAFC0)
@@ -199,7 +199,7 @@ I (button.h)(0x681E42D2)
 I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63888F58)
 I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63888F58)
 F (.\uart.h)(0x681E97C0)()
-F (.\adc.c)(0x681E902B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/adc.o -MD)
+F (.\adc.c)(0x6830F415)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/adc.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (adc.h)(0x6810C351)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x61A87598)
@@ -338,9 +338,9 @@ I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drive
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart_ex.h)(0x61A87598)
 F (.\pwm.h)(0x6810058A)()
 F (.\font5x8.h)(0x681E330C)()
-F (.\graphic.c)(0x681E6A56)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/graphic.o -MD)
+F (.\graphic.c)(0x6831035B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/graphic.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
-I (graphic.h)(0x681E6A56)
+I (graphic.h)(0x6830FED3)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f051x8.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm0.h)(0x664C1ED8)
@@ -383,8 +383,13 @@ I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drive
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart_ex.h)(0x61A87598)
 I (KS0108.h)(0x681E2E48)
-F (.\graphic.h)(0x681E6A56)()
-F (.\KS0108.c)(0x681E95FE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/ks0108.o -MD)
+I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63888F58)
+I (adc.h)(0x6810C351)
+I (delay.h)(0x681E67A9)
+I (timeout.h)(0x681E6C2B)
+I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\math.h)(0x63888F58)
+F (.\graphic.h)(0x6830FED3)()
+F (.\KS0108.c)(0x6830F368)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/ks0108.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (KS0108.h)(0x681E2E48)
 I (font5x8.h)(0x681E330C)
@@ -474,7 +479,7 @@ I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drive
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart_ex.h)(0x61A87598)
 F (.\button.h)(0x681E42D2)()
-F (.\button.c)(0x681E9841)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/button.o -MD)
+F (.\button.c)(0x682BD0F0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/button.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (button.h)(0x681E42D2)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h)(0x61A87598)
@@ -565,11 +570,11 @@ I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drive
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart_ex.h)(0x61A87598)
 I (delay.h)(0x681E67A9)
-I (graphic.h)(0x681E6A56)
+I (graphic.h)(0x6830FED3)
 I (KS0108.h)(0x681E2E48)
 I (button.h)(0x681E42D2)
 F (.\timeout.h)(0x681E6C2B)()
-F (.\measurement.c)(0x6822863B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/measurement.o -MD)
+F (.\measurement.c)(0x68310556)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/measurement.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (measurement.h)(0x681EAFC0)
 I (adc.h)(0x6810C351)
@@ -619,7 +624,7 @@ I (timeout.h)(0x681E6C2B)
 I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63888F58)
 I (dac.h)(0x6810058A)
 I (uart.h)(0x681E97C0)
-I (graphic.h)(0x681E6A56)
+I (graphic.h)(0x6830FED3)
 I (KS0108.h)(0x681E2E48)
 I (button.h)(0x681E42D2)
 I (C:\Keil\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63888F58)
@@ -670,6 +675,10 @@ I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drive
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart.h)(0x61A87598)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.1.1\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_usart_ex.h)(0x61A87598)
 I (storage.h)(0x68228587)
+F (.\font_rus.c)(0x682BCD32)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/font_rus.o -MD)
+I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
+F (.\battary.c)(0x6830F2BA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/battary.o -MD)
+I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 F (C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Source/os_systick.c)(0x664C1ED8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/Device/STM32F051R8Tx-I./RTE/_Target_1-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/CMSIS/Device/ST/STM32F0xx/Include"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc"-I"C:/Users/legion Slim 5/AppData/Local/Arm/Packs/Keil/STM32F0xx_DFP/2.1.1/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F051x8 -D_RTE_  -include "Pre_Include_Global.h"-o ./objects/os_systick.o -MD)
 I (RTE\_Target_1\Pre_Include_Global.h)(0x674842D2)
 I (C:\Users\legion Slim 5\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\RTOS2\Include\os_tick.h)(0x664C1ED8)
