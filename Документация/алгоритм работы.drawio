@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Страница — 1" id="Mim8Zkdh_NMgmR0piuTz">
-    <mxGraphModel dx="2228" dy="2162" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2467" dy="2162" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1231,13 +1231,21 @@
         <mxCell id="bDTT3zZLO7TIydvmCXNf-74" value="обработка дребезга кнопок" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" parent="1" vertex="1">
           <mxGeometry x="311" y="-726.74" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="axrRfUA8RNu9fdl-DA1W-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="eO0916l-ITshIJdoLQCF-1" target="axrRfUA8RNu9fdl-DA1W-2">
+        <mxCell id="axrRfUA8RNu9fdl-DA1W-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="eO0916l-ITshIJdoLQCF-1" target="axrRfUA8RNu9fdl-DA1W-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eO0916l-ITshIJdoLQCF-1" value="выключение прибора" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="877" y="-561" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="axrRfUA8RNu9fdl-DA1W-2" value="режим сна" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" vertex="1" parent="1">
+        <mxCell id="FPWkInUg6hIBSHyGX11E-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="axrRfUA8RNu9fdl-DA1W-2" target="lIS_4f85Qaf58x71vReY-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1084" y="-419" />
+              <mxPoint x="1084" y="-1015" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="axrRfUA8RNu9fdl-DA1W-2" value="режим сна" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" parent="1" vertex="1">
           <mxGeometry x="875" y="-449" width="124" height="60" as="geometry" />
         </mxCell>
       </root>
